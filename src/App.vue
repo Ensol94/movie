@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Film></Film>
+      <router-view></router-view>
+      <HomeFooter></HomeFooter>
   </div>
 </template>
-
 <script>
-import Film from './views/Film/index'
+import HomeFooter from './components/HomeFooter'
 
 export default {
   components : {
-    Film
+    HomeFooter
   }
 }
 </script>

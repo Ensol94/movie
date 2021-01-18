@@ -1,18 +1,19 @@
 <template>
   <div class="footer">
       <ul class="nav-bar">
-        <li class="films">
+        <router-link to="/film" tag="li" class="films">
           <span>电影</span>
-        </li>
-        <li class="cinemas">
+        </router-link>
+        <router-link to="/cinema" tag="li"  class="cinemas">
           <span>影院</span>
-        </li>
-        <li class="center">
+        </router-link>
+        <router-link to="/center" tag="li" class="center">
           <span>我的</span>
-        </li>
+        </router-link>
       </ul>
   </div>
 </template>
+
  <style lang="less">
  .footer {
     .nav-bar {
@@ -25,7 +26,7 @@
       margin: 0;
       z-index: 100;
       background: #fff;
-      line-height: 3;
+      align-items: center;
       list-style: none;
       text-align: center;
       color: #797d82;
@@ -33,6 +34,9 @@
         line-height: inherit;
         width: 100%;
         color: #797d82;
+      }
+      .router-link-active {
+        color: #ff5f16;
       }
     }
  }

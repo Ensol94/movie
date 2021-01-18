@@ -1,19 +1,16 @@
 <template>
   <div class="film">
-    <HomeBanner></HomeBanner>
-    <HomeTabs></HomeTabs>
-    <HomeFooter></HomeFooter>
+    <FilmBanner></FilmBanner>
+    <FilmTabs></FilmTabs>
   </div>
 </template>
 <script>
-import HomeBanner from '../../components/HomeBanner'
-import HomeTabs from '../../components/HomeTabs'
-import HomeFooter from '../../components/HomeFooter'
+import FilmBanner from '../../components/FilmBanner'
+import FilmTabs from '../../components/FilmTabs'
 export default {
   components : {
-    HomeBanner,
-    HomeTabs,
-    HomeFooter
+    FilmBanner,
+    FilmTabs
   }
 }
 </script>

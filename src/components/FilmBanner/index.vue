@@ -35,6 +35,9 @@ export default {
 .banner {
   .swiper-container {
     height: 210px;
+    .swiper-slide{
+      width: 100%;
+    }
   }
 }
 </style>
