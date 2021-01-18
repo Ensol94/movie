@@ -1,12 +1,12 @@
 <template>
   <div class="tabs">
     <ul class="tabs_ul">
-      <li class="tab_nowPlaying">
+      <router-link tag="li" to="/film/nowPlaying" class="tab_nowPlaying">
         <span>正在热映</span>
-      </li>
-      <li class="tab_comingSoon">
+      </router-link>
+      <router-link tag="li" to="/film/comingSoon" class="tab_comingSoon">
         <span>即将上映</span>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -22,6 +22,9 @@
       align-items: center;
       li {
         width: 100%;
+      }
+      .router-link-active {
+        color: #ff5f16;
       }
     }
      ::after {
