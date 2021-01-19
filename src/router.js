@@ -58,6 +58,10 @@ let router =  new VueRouter({
       path : '/system',
       component : () => import('./views/System')
     },
+    {
+      path : '/login',
+      component : () => import('./views/Login')
+    },
     // 城市选择
     {
       path: '/city',
@@ -70,6 +74,22 @@ let router =  new VueRouter({
     }
   ]
 });
-
+// 路由拦截
+router.beforeEach((to, from, next) => {
+  let nickname = sessionStorage.getItem('nickName')
+  let intercept = ['/card','/money','/system'];
+  // ...
+  if(intercept.indexOf(to.path) > -1 && !nickname){
+    next({
+      path : '/login',
+      query : {
+        // 从哪里进来就回哪里去。fullPath获取从哪进来
+        redirect : to.fullPath
+      }
+    })
+  } else{
+    next();
+  }
+});
 export default router;
 
