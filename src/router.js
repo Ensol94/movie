@@ -46,7 +46,18 @@ let router =  new VueRouter({
         }
       ]
     },
-
+    {
+      path : '/card',
+      component : () => import('./views/Card')
+    },
+    {
+      path : '/money',
+      component : () => import('./views/Money')
+    },
+    {
+      path : '/system',
+      component : () => import('./views/System')
+    },
     // 城市选择
     {
       path: '/city',
