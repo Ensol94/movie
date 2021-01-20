@@ -40,8 +40,11 @@ export default {
     width: 50px;
     height: 20px;
     align-items: center;
+    z-index: 2;
+    border-radius: 3px;
+    font-size: 14px;
     text-align: center;
-    z-index: 3000;
+    background-color: Thistle;
   }
 }
 </style>

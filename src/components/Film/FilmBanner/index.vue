@@ -8,11 +8,11 @@
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
-
 </div>
   </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
   mounted () {
     new Swiper ('.swiper-container', {

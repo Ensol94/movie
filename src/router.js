@@ -62,6 +62,10 @@ let router =  new VueRouter({
       path : '/login',
       component : () => import('./views/Login')
     },
+    {
+      path : '/detail',
+      component : () => import('./views/Detail')
+    },
     // 城市选择
     {
       path: '/city',

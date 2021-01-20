@@ -1,5 +1,5 @@
 <template>
   <div>
-    comingsoon
+    详情页面
   </div>
 </template>
