@@ -6,7 +6,7 @@
           <i class="iconfont icon-guanbi"></i>
         </span>
       </div>
-      <div class="title">当前城市 - </div>
+      <div class="title">当前城市 - {{ nowCityName }}</div>
     </div>
     <div class="search">
       <div class="input_wrap">
@@ -36,7 +36,8 @@
             <ul class="city-index-detail cleanfix">
               <li class="city-item-detail"
               v-for="(hotItem,hotIndex) in filterHotCity"
-              :key="hotIndex">
+              :key="hotIndex"
+              >
                 <div class="city-item-text">
                   {{ hotItem.name }}
                 </div>
@@ -56,6 +57,7 @@
             <li class="city-item-detail-white"
             v-for="(cityItem,cityIndex) in item.list"
             :key="cityIndex"
+            @click="getNowCityName(cityItem.name)"
             >
               <div class="city-item-text in-section">
                 {{ cityItem.name }}
@@ -115,12 +117,15 @@ export default {
     // 获取热门城市
     filterHotCity () {
       this.cityData.filter(item => {
-        console.log(item.isHot)
         if(item.isHot === 1){
           this.isHotArr.push(item);
         }
       })
       return this.isHotArr;
+    },
+    // 获取当前城市数据
+    nowCityName () {
+      return this.$store.state.nowCityName
     }
   },
   methods : {
@@ -146,6 +151,10 @@ export default {
       console.log(el.offsetTop)
       // 操作左侧距离顶部距离，进行定位
       document.documentElement.scrollTop = el.offsetTop;
+    },
+    //  切换城市
+     getNowCityName(nowName){
+      return this.$store.commit('getNowCityName',nowName)
     }
 
   },
