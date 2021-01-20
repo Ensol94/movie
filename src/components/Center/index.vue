@@ -1,6 +1,10 @@
 <template>
   <div class="center">
-    <div class="mySeft">个人账号</div>
+    <div class="mySeft">
+      <span v-if="!userState">未登录</span>
+      <span v-else>已登录</span>
+    </div>
+
     <ul class="orderForm">
       <li> 电影订单 </li>
       <li> 商品订单 </li>
@@ -24,6 +28,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      userState : sessionStorage.getItem('nickName')
+    }
+  }
 }
 </script>
 <style lang="less">
