@@ -45,6 +45,9 @@ export default {
     text-align: center;
     background: url('../../assets/backroungCenter.png');
     background-size: cover;
+    span {
+      color: #fff;
+    }
   }
   .orderForm {
     width: 100%;
