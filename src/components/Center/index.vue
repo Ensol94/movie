@@ -36,6 +36,9 @@ export default {
 }
 </script>
 <style lang="less">
+body {
+  background: #f4f4f4;
+}
 .center {
   .mySeft{
     height: 150px;
@@ -45,6 +48,7 @@ export default {
     text-align: center;
     background: url('../../assets/backroungCenter.png');
     background-size: cover;
+
     span {
       color: #fff;
     }
@@ -54,15 +58,18 @@ export default {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+    background: #fff;
     li {
       width: 100%;
       text-align: center;
       height: 79px;
       align-items: center;
-      line-height: 50px;
+      line-height: 79px;
     }
   }
   .userAction {
+    background: #fff;
     .card,.money,.system {
       padding: 0 15px;
       height: 49px;

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <router-view></router-view>
+    <transition
+    enter-active-class=" animated animate__bounceOutUp"
+    leave-active-class=" animated animate__bounceOutDown"
+    >
+        <router-view></router-view>
+    </transition>
     <HomeFooter></HomeFooter>
   </div>
 </template>

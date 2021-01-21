@@ -32,7 +32,7 @@ export default {
         // setTimeout(() => {
         // }, 500);  延时器方式
         this.$nextTick(() => {
-            new Swiper ('.swiper-container', {
+          let mySwiper =  new Swiper ('.swiper-container', {
             loop: true, // 循环模式选项
 
             // 如果需要分页器
@@ -52,6 +52,8 @@ export default {
     this.getSlideData();
 
   },
+  updated () {
+  }
 
 }
 </script>

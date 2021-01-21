@@ -57,7 +57,7 @@
             <li class="city-item-detail-white"
             v-for="(cityItem,cityIndex) in item.list"
             :key="cityIndex"
-            @click="getNowCityName(cityItem.name)"
+            @click="getNowCityName(cityItem)"
             >
               <div class="city-item-text in-section">
                 {{ cityItem.name }}
@@ -125,6 +125,7 @@ export default {
     },
     // 获取当前城市数据
     nowCityName () {
+      console.log(this.$store.newCityObj)
       return this.$store.state.nowCityName
     }
   },
@@ -148,13 +149,15 @@ export default {
     lookCity (py) {
       // 得到左侧距离顶部的距离
       let el = document.getElementById(py);
-      console.log(el.offsetTop)
       // 操作左侧距离顶部距离，进行定位
       document.documentElement.scrollTop = el.offsetTop;
     },
     //  切换城市
-     getNowCityName(nowName){
-      return this.$store.commit('getNowCityName',nowName)
+    /**
+     *  nowName 点击的城市对象
+     */
+     getNowCityName(nowCityObj){
+      return this.$store.commit('getNowCityName',nowCityObj)
     }
 
   },
