@@ -1,0 +1,138 @@
+
+.main_page{
+  font-size: 13px;
+  color: #797d82;
+  .main_img{
+    width: 100%;
+    height: 100%;
+    .header_img {
+      width: 100%;
+      height: 210px;
+      overflow-y: hidden;
+    }
+  }
+  .main_details{
+    padding: 12px 15px 15px;
+    overflow: hidden;
+    height: 100%;
+    .details_header{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .header_name{
+        strong {
+          font-size: 18px;
+          color: #000;
+          margin-right: 7px;
+        }
+        span {
+          font-size: 10px;
+          color: #fff;
+          background-color: #d2d6dc;
+          padding: 0 2px;
+        }
+      }
+      .header_score {
+        font-size: 18px;
+        color: #ffb232;
+        position: absolute;
+        right: 15px;
+      }
+    }
+    .details_type,.details_release_date,.details_video_time{
+      margin-top: 4px;
+    }
+    .details_describe{
+      width: 100%;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  }
+  .main_actor_message {
+    margin-top: 12px;
+    overflow: hidden;
+    .actor_title {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      color: #000;
+    }
+    .actor_message {
+      display: flex;
+      justify-content: flex-start;
+      text-align: center;
+      padding-left: 15px;
+      z-index: 100;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      li {
+        width: 85px;
+        max-width: 85px;
+        margin-right: 10px;
+        div {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          .actor_picture {
+            height: 85px;
+            width: 85px;
+            .picture_style {
+              height: 85px;
+              width: 85px;
+            }
+          }
+            .actor_name {
+              padding-top: 10px;
+              padding-bottom: 5px;
+              color: #000;
+          }
+        }
+      }
+    }
+  }
+  .main_photos {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    background-color: #fff;
+    .main_photosName {
+        height: 32px;
+        line-height: 32px;
+        padding: 15px;
+        overflow: hidden;
+        position: relative;
+        .photo_left {
+          font-size: 16px;
+          text-align: left;
+          color: #191a1b;
+          float: left;
+        }
+        .main_right{
+          position: absolute;
+          right: 15px;
+            font-size: 13px;
+            color: #797d82;
+        }
+    }
+    .main_photoBox {
+      height: 115px;
+      background: rgb(255, 255, 255);
+      overflow-x: hidden;
+      .photoBox_ul {
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        li {
+          img {
+            width: 150px;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}

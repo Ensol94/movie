@@ -7,7 +7,7 @@
           infinite-scroll-distance="100"
           class="nowPlayingList"
         >
-          <router-link tag="li" to="/detail" class="nowPlayingFilm-item"
+          <router-link tag="li" :to="'/detail/' + filmItem.filmId" class="nowPlayingFilm-item"
           v-for="filmItem in filmData"
           :key="filmItem.filmId">
             <a href="#/film/5268" class="nowPlayingFilm-wrap"
