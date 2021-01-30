@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <!-- 头部 -->
     <div class="headerCity">
       <div class="left">
         <span>
@@ -8,13 +9,17 @@
       </div>
       <div class="title">当前城市 - {{ nowCityName }}</div>
     </div>
+    <!-- 搜索 -->
     <div class="search">
       <div class="input_wrap">
         <i class="iconfont icon-search search-icon"></i>
-        <input type="text" placeholder="输入城市名或拼音" class="search-input">
+        <input type="text" placeholder="输入城市首字母" class="search-input"
+        v-model="searchValue"
+        >
       </div>
     </div>
-    <div class="mint">
+    <!-- 城市内容 -->
+    <div class="mint" v-if="searchValue === ''">
       <ul class="mint-indexlist-content">
         <div class="recommend-city">
           <div class="gprs-city">
@@ -78,6 +83,16 @@
         </ul>
       </div>
     </div>
+    <!-- 搜索城市内容 -->
+    <div class="getSearch" v-else>
+      <ul
+      >
+        <li
+        v-for="(shItem,shIndex) in getSearchVal.list"
+        :key="shIndex"
+        >{{ shItem.name}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -86,6 +101,8 @@ import axios from 'axios';
 export default {
   data () {
     return {
+      searchValue : '',
+      searchObj: {},
       cityData: [],
       isHotArr: []
     }
@@ -127,6 +144,15 @@ export default {
     nowCityName () {
       console.log(this.$store.newCityObj)
       return this.$store.state.nowCityName
+    },
+    getSearchVal () {
+      let searchV = this.filterCityData;
+      searchV.filter(item => {
+        if (this.searchValue === item.py) {
+          this.searchObj = item;
+        }
+      })
+      return this.searchObj;
     }
   },
   methods : {
