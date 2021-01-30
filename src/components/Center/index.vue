@@ -36,9 +36,6 @@ export default {
 }
 </script>
 <style lang="less">
-body {
-  background: #f4f4f4;
-}
 .center {
   .mySeft{
     height: 150px;

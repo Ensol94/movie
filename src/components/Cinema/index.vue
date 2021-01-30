@@ -1,5 +1,5 @@
 <template>
-  <div class="cinema">
+  <div class="cinema" >
     <!-- 头部 -->
     <div class="header">
       <ul>

@@ -1,10 +1,11 @@
 <template>
   <div>
     <transition
-    enter-active-class=" animated animate__bounceOutUp"
-    leave-active-class=" animated animate__bounceOutDown"
+    mode="out-in"
+    enter-active-class="animated animate__bounceInLeft"
+    leave-active-class="animated animate__bounceOutRight"
     >
-        <router-view></router-view>
+        <router-view ></router-view>
     </transition>
     <HomeFooter></HomeFooter>
   </div>

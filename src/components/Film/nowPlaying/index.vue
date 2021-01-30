@@ -47,6 +47,10 @@
             >
           </router-link>
         </ul>
+        <p v-if="pageNum >= pages" class="showP">没有更多了</p>
+        <button class="btn_more" @click="nowPageData"
+          v-else
+        >点击加载更多</button>
       </div>
     </div>
   </div>
@@ -57,7 +61,17 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      filmData : []
+      filmData : [],
+      pageNum : 1,
+      pageSize : 10,
+
+      total : 0
+    }
+  },
+  computed : {
+    // 一个多少页
+    pages () {
+      return Math.ceil(this.total / this.pageSize);
     }
   },
   methods : {
@@ -65,8 +79,8 @@ export default {
       axios.get('https://m.maizuo.com/gateway',{
         params: {
           cityId:440100,
-          pageNum:1,
-          pageSize:10,
+          pageNum: this.pageNum,
+          pageSize:this.pageSize,
           type:1,
           k:3807867
         },
@@ -76,13 +90,21 @@ export default {
         }
       }).then(response => {
         let res = response.data;
+        console.log(res)
         if (res.status === 0) {
-          this.filmData = res.data.films;
+          this.filmData = this.filmData.concat(res.data.films);
+          this.total = (res.data.total - 23);
+          console.log(this.total)
         }
       })
       return this.filmData
+    },
+    nowPageData () {
+      this.pageNum++;
+      this.getDetailData();
     }
   },
+
   created() {
     this.getDetailData();
   },

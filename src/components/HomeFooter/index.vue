@@ -18,12 +18,11 @@
  .footer {
     .nav-bar {
       position: fixed;
+      left: 0;
       bottom: 0;
       width: 100%;
       height: 50px;
       display: flex;
-      padding: 0;
-      margin: 0;
       z-index: 100;
       background: #fff;
       align-items: center;
